@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Diseño y nuevos medios" />
+        <title>DNO037</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <p><a href="index.html">Portada</a> <a href="peliculas.html">Películas</a> <a href="locaciones.html" class="active">Locaciones</a> <a href="ganancias.html">Ganancias</a></p>
+            </nav>
+            <main>
+                <div id="mapa">
+                    <!--acá se mete el mapa-->
+                </div>
+            </main>
+            <footer>
+                <p><a href="https://github.com/antoniariescoc">Antonia Riesco C.</a> <a href="https://github.com/antoniariescoc/dno037-clase-9">DNO037</a></p>
+            </footer>
+        </div>
+<script>
+    var mymap = L.map('mapa').setView([33.5427796,9.9672612], 2);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        id: 'mapbox/dark-v10',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+    L.marker([49.26214944507948, -123.15126464632758]).addTo(mymap).bindPopup("<b>Mainframe Studios</b>. Vancouver Canadá");
+
+   L.marker([40.729582550059696, -73.99231822490955]).addTo(mymap).bindPopup("<b> Corious Picutres </b>. New York, Estados Unidos"); 
+
+   L.marker([34.15623692352918, -118.39685666103912]).addTo(mymap).bindPopup("<b>Technicolor SA</b>. Los Ángeles."); 
+
+   L.marker([45.328518078996915, -75.70898826370274]).addTo(mymap).bindPopup("<b> Jam Filled Entertainment </b>.Toronto"); 
+
+
+</script>
+    </body>
+</html>
